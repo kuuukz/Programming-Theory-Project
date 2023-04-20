@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -10,13 +9,16 @@ using UnityEditor;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject menuPanel;
-    public GameObject summaryPanel;
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject summaryPanel;
 
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI summaryText;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI summaryText;
 
-    public string lackName = "Doggy";
+    private AudioSource menuAudio;
+    [SerializeField] AudioClip audioClip;
+
+    private string lackName = "Doggy";
     private string playerName;
     public string PlayerName
     {
@@ -38,12 +40,8 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        menuAudio = GetComponent<AudioSource>();
         scoreText.text = "Friends fed: " + score;
-    }
-
-    void Update()
-    {
-
     }
 
     public void AddPoint(int point)
@@ -60,11 +58,13 @@ public class Menu : MonoBehaviour
     public void StartGameButton()
     {
         menuPanel.SetActive(false);
+        menuAudio.PlayOneShot(audioClip, 1.0f);
     }
 
     public void SummaryButton()
     {
         summaryPanel.SetActive(true);
+        menuAudio.PlayOneShot(audioClip, 1.0f);
         if (score == 1)
         {
             summaryText.text = $"You have fed {score} friend!";
@@ -87,14 +87,14 @@ public class Menu : MonoBehaviour
     public void ResumeButton()
     {
         summaryPanel.SetActive(false);
+        menuAudio.PlayOneShot(audioClip, 1.0f);
     }
 
     public void BackToMenuButton()
     {
         summaryPanel.SetActive(false);
         menuPanel.SetActive(true);
+        menuAudio.PlayOneShot(audioClip, 1.0f);
         SceneManager.LoadScene(0);
     }
-
-
 }

@@ -23,6 +23,15 @@ public class ChickenNeeds : Dialogue
             playerScript.gotCookie = false;
             chickenQuest = false;
             menuScript.AddPoint(1);
+            Jump();
         }
+    }
+
+    void Jump()
+    {
+        Rigidbody chickenRb;
+        chickenRb = GetComponentInParent<Rigidbody>();
+        float jumpForce = 300;
+        chickenRb.AddForce(Vector3.up * jumpForce, ForceMode.Force);
     }
 }

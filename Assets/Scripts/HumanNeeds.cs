@@ -19,7 +19,7 @@ public class HumanNeeds : Dialogue
 
         if (playerScript.gotPizza)
         {
-            dialogueText.text = "Grazie Mille! I like it!";
+            dialogueText.text = "Grazie mille! I like it!";
             playerScript.gotPizza = false;
             humanQuest = false;
             menuScript.AddPoint(1);
