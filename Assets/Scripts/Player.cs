@@ -7,7 +7,10 @@ public class Player : MonoBehaviour
     Animator playerAnimator;
 
     private float speed = 5.0f;
-    private bool isSitting = true;
+
+    public bool gotCarrot;
+    public bool gotCookie;
+    public bool gotPizza;
 
     void Start()
     {
