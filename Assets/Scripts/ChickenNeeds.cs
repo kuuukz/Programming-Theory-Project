@@ -8,7 +8,7 @@ public class ChickenNeeds : Dialogue
     {
         if (!chickenQuest)
         {
-            dialogueText.text = "Hello [player]! Could you bring me a cookie?";
+            dialogueText.text = $"Hello {menuScript.PlayerName}! Could you bring me a cookie?";
             chickenQuest = true;
             SpawnFood();
         }
@@ -22,6 +22,7 @@ public class ChickenNeeds : Dialogue
             dialogueText.text = "Thank you! It's delicious!";
             playerScript.gotCookie = false;
             chickenQuest = false;
+            menuScript.AddPoint(1);
         }
     }
 }

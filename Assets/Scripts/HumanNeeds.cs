@@ -8,7 +8,7 @@ public class HumanNeeds : Dialogue
     {
         if (!humanQuest)
         {
-            dialogueText.text = "Hello [player]! Could you bring me a pizza?";
+            dialogueText.text = $"Hello {menuScript.PlayerName}! Could you bring me a pizza?";
             humanQuest = true;
             SpawnFood();
         }
@@ -22,6 +22,7 @@ public class HumanNeeds : Dialogue
             dialogueText.text = "Grazie Mille! I like it!";
             playerScript.gotPizza = false;
             humanQuest = false;
+            menuScript.AddPoint(1);
         }
     }
 }

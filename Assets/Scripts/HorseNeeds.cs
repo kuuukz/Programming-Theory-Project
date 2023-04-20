@@ -8,7 +8,7 @@ public class HorseNeeds : Dialogue
     {
         if (!horseQuest)
         {
-            dialogueText.text = "Hello [player]! Could you bring me a carrot?";
+            dialogueText.text = $"Hello {menuScript.PlayerName}! Could you bring me a carrot?";
             horseQuest = true;
             SpawnFood();
         }
@@ -22,6 +22,7 @@ public class HorseNeeds : Dialogue
             dialogueText.text = "Thank you! It's so yummy!";
             playerScript.gotCarrot = false;
             horseQuest = false;
+            menuScript.AddPoint(1);
         }
     }
 }

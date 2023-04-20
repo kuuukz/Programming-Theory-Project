@@ -10,8 +10,7 @@ public class Dialogue : MonoBehaviour
 
     public GameObject food;
     public Player playerScript;
-
-    public Technicalities technicalitiesScript;
+    public Menu menuScript;
 
     public bool horseQuest;
     public bool chickenQuest;
@@ -20,6 +19,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<Player>();
+        menuScript = GameObject.Find("MenuManager").GetComponent<Menu>();
     }
 
     public void OnTriggerEnter(Collider other)
