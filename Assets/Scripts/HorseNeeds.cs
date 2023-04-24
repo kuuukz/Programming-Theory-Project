@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HorseNeeds : Dialogue
+public class HorseNeeds : Dialogue // INHERITANCE (CHILD)
 {
     [SerializeField] AudioSource horseSourse;
     [SerializeField] AudioClip yeeySound;
 
-    public override void Speech()
+    public override void Speech() // POLYMORPHISM
     {
         if (!horseQuest)
         {

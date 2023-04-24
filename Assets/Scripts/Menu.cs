@@ -20,9 +20,9 @@ public class Menu : MonoBehaviour
 
     private string lackName = "Doggy";
     private string playerName;
-    public string PlayerName
+    public string PlayerName // ENCAPSULATION
     {
-        get
+        get // GETTER
         {
             if (playerName == null)
             {
@@ -33,7 +33,7 @@ public class Menu : MonoBehaviour
                 return playerName;
             }
         }
-        set 
+        set // SETTER
         { playerName = value; }
     }
     int score;

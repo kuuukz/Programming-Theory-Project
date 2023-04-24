@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HumanNeeds : Dialogue
+public class HumanNeeds : Dialogue // INHERITANCE (CHILD)
 {
-    public override void Speech()
+    public override void Speech() // POLYMORPHISM
     {
         if (!humanQuest)
         {

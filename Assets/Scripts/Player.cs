@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
 
         if (front)
         {
-            Rotation(0);
-            Move();
+            Rotation(0); // ABSTRACTION
+            Move(); // ABSTRACTION
         }
         if (back)
         {

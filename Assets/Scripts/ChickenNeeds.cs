@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenNeeds : Dialogue
+public class ChickenNeeds : Dialogue // INHERITANCE (CHILD)
 {
-    public override void Speech()
+    public override void Speech() // POLYMORPHISM
     {
         if (!chickenQuest)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue : MonoBehaviour // INHERITANCE (PARENT)
 {
     public GameObject text;
     public TextMeshProUGUI dialogueText;
@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             text.SetActive(true);
-            Speech();
+            Speech(); // ABSTRACTION
         }
     }
 
